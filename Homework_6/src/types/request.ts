@@ -31,3 +31,10 @@ export interface AddUserToGroupRequest extends ValidatedRequestSchema {
     groupId: string
   }
 }
+
+export interface LoginRequestSchema extends ValidatedRequestSchema {
+  [ContainerTypes.Body]: {
+    login: string,
+    password: string
+  }
+}

@@ -32,3 +32,12 @@ export const updateUserById = async (id: string, data: UpdateUserRequestBody): P
 export const getAutoSuggestUsers = async (loginSubstring: string, limit: string): Promise<UserModel[]> => await (
   User.findAll({ where: { login: { [Op.like]: `%${loginSubstring}%` } }, order: [['login', 'ASC']], limit: Number(limit) })
 );
+
+export const getUserByCredentials = async (login: string, password: string): Promise<UserModel | null> => await (
+  User.findOne({
+    where: {
+      login,
+      password
+    }
+  })
+);

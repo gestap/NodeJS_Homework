@@ -1,5 +1,6 @@
 import { createValidator } from 'express-joi-validation';
 import Joi from 'joi';
+
 import { Permission } from '../../../types';
 
 const validator = createValidator();
